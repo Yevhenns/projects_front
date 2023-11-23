@@ -5,10 +5,12 @@ import { Footer } from "../Footer/Footer";
 
 export const Layout: FC = () => {
   return (
-    <div>
+    <>
       <Header />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
-    </div>
+    </>
   );
 };

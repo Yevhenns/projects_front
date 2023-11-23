@@ -1,3 +1,5 @@
-export const Header = () => {
-  return <div>Header</div>;
+import { FC } from "react";
+
+export const Header: FC = () => {
+  return <header>Header</header>;
 };

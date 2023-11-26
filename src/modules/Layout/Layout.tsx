@@ -5,12 +5,12 @@ import { Footer } from "../Footer/Footer";
 
 export const Layout: FC = () => {
   return (
-    <>
+    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
       <Header />
-      <main>
+      <main style={{ flex: "1 1 auto" }}>
         <Outlet />
       </main>
       <Footer />
-    </>
+    </div>
   );
 };

@@ -1,21 +1,28 @@
 import { FC, useState } from "react";
 import { Box } from "@chakra-ui/react";
+import { Project } from "../../modules/Project/Project";
 
 export const Home: FC = () => {
   const [items] = useState([
     {
       id: "1",
       title: "title1",
-      descr: "asd",
+      description: "asd",
       category: "1",
-      tasks: ["1.asd", "2.dsa"],
+      tasks: [
+        { id: "1", task: "to do 1" },
+        { id: "2", task: "to do 2" },
+      ],
     },
     {
       id: "2",
-      title: "title1",
-      descr: "asd",
+      title: "title2",
+      description: "asd",
       category: "2",
-      tasks: ["1.asd", "2.dsa"],
+      tasks: [
+        { id: "1", task: "to do 1" },
+        { id: "2", task: "to do 2" },
+      ],
     },
   ]);
 
@@ -23,17 +30,7 @@ export const Home: FC = () => {
     <Box marginLeft="auto" marginRight="auto" w={[300, 400, 500]}>
       <Box display="flex" flexDirection="column" gap="20px">
         {items.map((item) => (
-          <Box
-            border="1px"
-            borderColor="gray.200"
-            borderRadius="10px"
-            padding="10px"
-            key={item.id}
-            cursor="pointer"
-          >
-            <p>{item.title}</p>
-            <p>{item.descr}</p>
-          </Box>
+          <Project key={item.id} data={item} />
         ))}
       </Box>
     </Box>
